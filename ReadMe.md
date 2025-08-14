@@ -1,3 +1,27 @@
 <h2>Comentário - Primeiro parágrafo</h2>
 
 <p>O texto diferencia programação, ciência da computação e engenharia de software, destacando que esta última aplica teoria e práticas de forma rigorosa para criar sistemas grandes e confiáveis. Embora historicamente menos formal que outras engenharias, o software hoje exige padrões mais robustos, dado seu papel crítico na sociedade. A experiência do Google com sistemas massivos oferece uma visão prática única sobre como alcançar essa maturidade.</p>
+
+<h2>Comentário - Segundo parágrafo</h2>
+
+<p>Esse segundo trecho amplia a definição de engenharia de software, deixando claro que ela não é só escrever código, mas também envolve processos, ferramentas e práticas que permitem manter esse código útil e sustentável ao longo do tempo.
+
+O Google propõe a ideia de que engenharia de software é como “programação integrada ao longo do tempo” — ou seja, não basta o código funcionar hoje; ele precisa ser fácil de evoluir, corrigir e eventualmente aposentar.
+
+O texto apresenta três princípios centrais para guiar decisões e práticas:
+	1.	Tempo e Mudança – O código inevitavelmente precisará se adaptar a novas necessidades, tecnologias e requisitos ao longo de sua vida.
+	2.	Escala e Crescimento – À medida que a organização e o produto crescem, processos e arquitetura também precisam evoluir.
+	3.	Trade-offs e Custos – Decisões devem ser tomadas considerando os impactos no longo prazo e o equilíbrio entre vantagens e desvantagens.
+
+⸻
+
+3 exemplos de trade-offs em engenharia de software
+	1.	Velocidade de entrega vs. Qualidade do código
+	•	Escolher entregar rapidamente pode ajudar a lançar uma funcionalidade no mercado, mas aumenta o risco de dívidas técnicas e problemas futuros.
+	•	Optar por investir mais tempo na qualidade reduz problemas a longo prazo, mas pode atrasar o lançamento.
+	2.	Performance vs. Legibilidade
+	•	Um código extremamente otimizado pode ser mais rápido, mas também mais complexo e difícil de entender.
+	•	Um código mais simples e legível é fácil de manter, mas pode não ser o mais eficiente em execução.
+	3.	Centralização vs. Descentralização de decisões técnicas
+	•	Centralizar decisões traz padronização e consistência, mas pode reduzir a autonomia e a agilidade das equipes.
+	•	Descentralizar dá mais liberdade e velocidade para cada time, mas pode gerar fragmentação e duplicação de esforços.</p>
