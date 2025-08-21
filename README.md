@@ -15,7 +15,8 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 ⸻
 
-3 exemplos de trade-offs em engenharia de software:
+<h2>📌Exemplos de trade-offs em engenharia de software:</h2>
+
 <p>1.	Velocidade de entrega vs. Qualidade do código</p>
 <p>•	Escolher entregar rapidamente pode ajudar a lançar uma funcionalidade no mercado, mas aumenta o risco de dívidas técnicas e problemas futuros.</p>
 <p>•	Optar por investir mais tempo na qualidade reduz problemas a longo prazo, mas pode atrasar o lançamento.</p>
