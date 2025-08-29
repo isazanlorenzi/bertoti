@@ -29,4 +29,4 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 <h2>📌Diagrama de Classes UML</h2>
 
-<img>"imagem(1).png"</img>
+<img align="right" src="/image (1).png" alt="Diagrama" width="1000" height="600"/>
