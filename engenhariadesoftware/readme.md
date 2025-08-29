@@ -30,3 +30,88 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <h2>📌Diagrama de Classes UML</h2>
 
 <img align="right" src="/engenhariadesoftware/image (1).png" alt="Diagrama" width="1000" height="600"/>
+
+<h2>📌Código Java</h2>
+
+<code>// Classe Pessoa
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    // Construtor
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    // Métodos
+    public void falar() {
+        System.out.println(nome + " está falando.");
+    }
+
+    public void andar() {
+        System.out.println(nome + " está andando.");
+    }
+}
+
+// Classe Aluno (herda de Pessoa)
+public class Aluno extends Pessoa {
+    private String matricula;
+
+    public Aluno(String nome, int idade, String matricula) {
+        super(nome, idade);
+        this.matricula = matricula;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void estudar() {
+        System.out.println(getNome() + " está estudando.");
+    }
+}
+
+// Classe Professor (herda de Pessoa)
+public class Professor extends Pessoa {
+    private double salario;
+
+    public Professor(String nome, int idade, double salario) {
+        super(nome, idade);
+        this.salario = salario;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public void ensinar() {
+        System.out.println(getNome() + " está ensinando.");
+    }
+}
+</code>
