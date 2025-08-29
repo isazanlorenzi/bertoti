@@ -26,3 +26,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <p>3.	Centralização vs. Descentralização de decisões técnicas</p>
 <p>•	Centralizar decisões traz padronização e consistência, mas pode reduzir a autonomia e a agilidade das equipes.</p>
 <p>•	Descentralizar dá mais liberdade e velocidade para cada time, mas pode gerar fragmentação e duplicação de esforços.</p>
+
+<h2>📌Diagrama de Classes UML</h2>
+
+<img>"imagem(1).png"</img>
