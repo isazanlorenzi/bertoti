@@ -115,3 +115,5 @@ public class Professor extends Pessoa {
     }
 }
 </code>
+
+<h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Bancário</h2>
