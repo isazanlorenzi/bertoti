@@ -123,18 +123,30 @@ public class Professor extends Pessoa {
 <h2>📌Código Java</h2>
 
 <code>
-// Classe base Pessoa
-public class Pessoa {
+import java.util.ArrayList;
+import java.util.List;
+
+class Banco {
+    private String numero;
     private String nome;
-    private int idade;
+    private String endereco;
 
     // Construtor
-    public Pessoa(String nome, int idade) {
+    public Banco(String numero, String nome, String endereco) {
+        this.numero = numero;
         this.nome = nome;
-        this.idade = idade;
+        this.endereco = endereco;
     }
 
     // Getters e Setters
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -143,65 +155,67 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    // Métodos
-    public void falar() {
-        System.out.println(nome + " está falando.");
-    }
-
-    public void andar() {
-        System.out.println(nome + " está andando.");
-    }
-}
-
-// Classe Aluno que herda de Pessoa
-public class Aluno extends Pessoa {
-    private String matricula;
-
-    public Aluno(String nome, int idade, String matricula) {
-        super(nome, idade);
-        this.matricula = matricula;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public void estudar() {
-        System.out.println(getNome() + " está estudando.");
+    @Override
+    public String toString() {
+        return "Banco{" +
+                "numero='" + numero + '\'' +
+                ", nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                '}';
     }
 }
 
-// Classe Professor que herda de Pessoa
-public class Professor extends Pessoa {
-    private double salario;
+class SistemaBancario {
+    private List<Banco> bancos;
 
-    public Professor(String nome, int idade, double salario) {
-        super(nome, idade);
-        this.salario = salario;
+    public SistemaBancario() {
+        this.bancos = new ArrayList<>();
     }
 
-    public double getSalario() {
-        return salario;
+    // Método para adicionar banco
+    public void addBanco(Banco banco) {
+        bancos.add(banco);
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-    public void ensinar() {
-        System.out.println(getNome() + " está ensinando.");
+    // Método para buscar banco por número
+    public List<Banco> buscarBancoNumero(String numero) {
+        List<Banco> resultado = new ArrayList<>();
+        for (Banco banco : bancos) {
+            if (banco.getNumero().equals(numero)) {
+                resultado.add(banco);
+            }
+        }
+        return resultado;
     }
 }
+
+// Classe de teste
+public class Main {
+    public static void main(String[] args) {
+        SistemaBancario sistema = new SistemaBancario();
+
+        Banco b1 = new Banco("001", "Banco do Brasil", "Brasília");
+        Banco b2 = new Banco("237", "Bradesco", "São Paulo");
+        Banco b3 = new Banco("001", "Banco do Brasil - Filial", "Rio de Janeiro");
+
+        sistema.addBanco(b1);
+        sistema.addBanco(b2);
+        sistema.addBanco(b3);
+
+        System.out.println("Buscando bancos com número 001:");
+        List<Banco> encontrados = sistema.buscarBancoNumero("001");
+        for (Banco b : encontrados) {
+            System.out.println(b);
+        }
+    }
+}
+
 </code>
