@@ -152,99 +152,122 @@ public class Pedido {
 <h2>📌Código Java</h2>
 
 <code>
-import java.util.ArrayList;
-import java.util.List;
+// Entidade base
+public abstract class EntidadeEconomica {
+    protected String nome;
+    protected double saldo;
 
-class Banco {
-    private String numero;
-    private String nome;
-    private String endereco;
-
-    // Construtor
-    public Banco(String numero, String nome, String endereco) {
-        this.numero = numero;
+    public EntidadeEconomica(String nome, double saldo) {
         this.nome = nome;
-        this.endereco = endereco;
+        this.saldo = saldo;
     }
 
-    // Getters e Setters
-    public String getNumero() {
-        return numero;
+    public void depositar(double valor) {
+        saldo += valor;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+        } else {
+            System.out.println(nome + " não possui saldo suficiente.");
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 
     public String getNome() {
         return nome;
     }
+}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    @Override
-    public String toString() {
-        return "Banco{" +
-                "numero='" + numero + '\'' +
-                ", nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                '}';
+// Famílias
+public class Familia extends EntidadeEconomica {
+    public Familia(String nome, double saldo) {
+        super(nome, saldo);
     }
 }
 
-class SistemaBancario {
-    private List<Banco> bancos;
-
-    public SistemaBancario() {
-        this.bancos = new ArrayList<>();
+// Empresas
+public class Empresa extends EntidadeEconomica {
+    public Empresa(String nome, double saldo) {
+        super(nome, saldo);
     }
 
-    // Método para adicionar banco
-    public void addBanco(Banco banco) {
-        bancos.add(banco);
+    public void solicitarEmprestimo(SistemaBancario banco, double valor) {
+        banco.concederEmprestimo(this, valor);
+    }
+}
+
+// Governo
+public class Governo extends EntidadeEconomica {
+    public Governo(String nome, double saldo) {
+        super(nome, saldo);
     }
 
-    // Método para buscar banco por número
-    public List<Banco> buscarBancoNumero(String numero) {
-        List<Banco> resultado = new ArrayList<>();
-        for (Banco banco : bancos) {
-            if (banco.getNumero().equals(numero)) {
-                resultado.add(banco);
-            }
+    public void emitirTitulos(SistemaBancario banco, double valor) {
+        banco.comprarTitulosPublicos(this, valor);
+    }
+}
+
+// Banco Central
+public class BancoCentral {
+    public void fornecerLiquidez(SistemaBancario banco, double valor) {
+        banco.receberLiquidez(valor);
+        System.out.println("Banco Central forneceu R$" + valor + " de liquidez.");
+    }
+
+    public void regularSistema(SistemaBancario banco) {
+        System.out.println("Banco Central está regulando o sistema bancário.");
+    }
+}
+
+// Sistema Bancário
+import java.util.ArrayList;
+import java.util.List;
+
+public class SistemaBancario {
+    private double reservas;
+    private List<EntidadeEconomica> clientes = new ArrayList<>();
+
+    public void adicionarCliente(EntidadeEconomica entidade) {
+        clientes.add(entidade);
+    }
+
+    public void receberDeposito(EntidadeEconomica entidade, double valor) {
+        entidade.sacar(valor);
+        reservas += valor;
+        System.out.println(entidade.getNome() + " depositou R$" + valor);
+    }
+
+    public void concederEmprestimo(EntidadeEconomica entidade, double valor) {
+        if (valor <= reservas) {
+            entidade.depositar(valor);
+            reservas -= valor;
+            System.out.println("Empréstimo de R$" + valor + " concedido a " + entidade.getNome());
+        } else {
+            System.out.println("Reservas insuficientes para conceder empréstimo.");
         }
-        return resultado;
     }
-}
 
-// Classe de teste
-public class Main {
-    public static void main(String[] args) {
-        SistemaBancario sistema = new SistemaBancario();
-
-        Banco b1 = new Banco("001", "Banco do Brasil", "Brasília");
-        Banco b2 = new Banco("237", "Bradesco", "São Paulo");
-        Banco b3 = new Banco("001", "Banco do Brasil - Filial", "Rio de Janeiro");
-
-        sistema.addBanco(b1);
-        sistema.addBanco(b2);
-        sistema.addBanco(b3);
-
-        System.out.println("Buscando bancos com número 001:");
-        List<Banco> encontrados = sistema.buscarBancoNumero("001");
-        for (Banco b : encontrados) {
-            System.out.println(b);
+    public void comprarTitulosPublicos(Governo governo, double valor) {
+        if (valor <= reservas) {
+            reservas -= valor;
+            governo.depositar(valor);
+            System.out.println("Sistema bancário comprou R$" + valor + " em títulos públicos.");
+        } else {
+            System.out.println("Reservas insuficientes para comprar títulos.");
         }
     }
-}
 
+    public void receberLiquidez(double valor) {
+        reservas += valor;
+    }
+
+    public double getReservas() {
+        return reservas;
+    }
+}
 </code>
