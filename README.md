@@ -29,7 +29,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 <h2>📌Diagrama de Classes UML - Sistema Biblioteca</h2>
 
-<img align="right" src="/engenhariadesoftware/image (1).png" alt="Diagrama" width="1000" height="600"/>
+<img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/023c7ff4-8124-4ba8-ad4d-e112cabb2ea7" />
 
 <h2>📌Código Java</h2>
 
