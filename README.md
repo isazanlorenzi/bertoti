@@ -29,7 +29,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 <h2>📌Diagrama de Classes UML - Sistema Biblioteca</h2>
 
-<img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/023c7ff4-8124-4ba8-ad4d-e112cabb2ea7" />
+<img width="2328" height="1540" alt="image" src="https://github.com/user-attachments/assets/68114b2b-815e-4672-9ce7-a447c4a60afa" />
 
 <h2>📌Código Java</h2>
 
@@ -118,7 +118,7 @@ public class Professor extends Pessoa {
 
 <h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Bancário</h2>
 
-<img width="2244" height="512" alt="image" src="https://github.com/user-attachments/assets/a861ef15-94d2-40ef-ace8-3ffbb7c91913" />
+<img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/65f6a9cc-0971-4bf0-a6da-9e4a603f0ded" />
 
 <h2>📌Código Java</h2>
 
