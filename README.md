@@ -117,3 +117,5 @@ public class Professor extends Pessoa {
 </code>
 
 <h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Bancário</h2>
+
+<img width="2244" height="512" alt="image" src="https://github.com/user-attachments/assets/a861ef15-94d2-40ef-ace8-3ffbb7c91913" />
