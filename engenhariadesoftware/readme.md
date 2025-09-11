@@ -27,125 +27,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <p>•	Centralizar decisões traz padronização e consistência, mas pode reduzir a autonomia e a agilidade das equipes.</p>
 <p>•	Descentralizar dá mais liberdade e velocidade para cada time, mas pode gerar fragmentação e duplicação de esforços.</p>
 
-<h2>📌Diagrama de Classes UML - Sistema Biblioteca</h2>
-
-<img width="768" height="493" alt="uml_corrigido" src="https://github.com/user-attachments/assets/2e4bc0a6-4d20-4111-b3e9-c9ec972cca2c" />
-
-<h2>📌Código Java</h2>
-
-<code>
-// Classe base Pessoa
-public class Pessoa {
-    private String nome;
-    private String cpf;
-
-    // Construtor, getters e setters
-    public Pessoa(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
-
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-
-    public String getCpf() { return cpf; }
-    public void setCpf(String cpf) { this.cpf = cpf; }
-}
-
-// Cliente herda de Pessoa
-public class Cliente extends Pessoa {
-    public Cliente(String nome, String cpf) {
-        super(nome, cpf);
-    }
-}
-
-// Funcionário herda de Pessoa
-public class Funcionario extends Pessoa {
-    private double salario;
-
-    public Funcionario(String nome, String cpf, double salario) {
-        super(nome, cpf);
-        this.salario = salario;
-    }
-
-    public double getSalario() { return salario; }
-    public void setSalario(double salario) { this.salario = salario; }
-}
-
-// Gerente herda de Funcionário
-public class Gerente extends Funcionario {
-    private double bonus;
-
-    public Gerente(String nome, String cpf, double salario, double bonus) {
-        super(nome, cpf, salario);
-        this.bonus = bonus;
-    }
-
-    public double getBonus() { return bonus; }
-    public void setBonus(double bonus) { this.bonus = bonus; }
-}
-
-// Produto
-public class Produto {
-    private String nome;
-    private double preco;
-
-    public Produto(String nome, double preco) {
-        this.nome = nome;
-        this.preco = preco;
-    }
-
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-
-    public double getPreco() { return preco; }
-    public void setPreco(double preco) { this.preco = preco; }
-}
-
-// ItemPedido
-public class ItemPedido {
-    private int quantidade;
-    private Produto produto;
-
-    public ItemPedido(int quantidade, Produto produto) {
-        this.quantidade = quantidade;
-        this.produto = produto;
-    }
-
-    public int getQuantidade() { return quantidade; }
-    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
-
-    public Produto getProduto() { return produto; }
-    public void setProduto(Produto produto) { this.produto = produto; }
-}
-
-// Pedido
-import java.util.Date;
-import java.util.List;
-
-public class Pedido {
-    private Date data;
-    private Cliente cliente;
-    private List<ItemPedido> itens;
-
-    public Pedido(Date data, Cliente cliente, List<ItemPedido> itens) {
-        this.data = data;
-        this.cliente = cliente;
-        this.itens = itens;
-    }
-
-    public Date getData() { return data; }
-    public void setData(Date data) { this.data = data; }
-
-    public Cliente getCliente() { return cliente; }
-    public void setCliente(Cliente cliente) { this.cliente = cliente; }
-
-    public List<ItemPedido> getItens() { return itens; }
-    public void setItens(List<ItemPedido> itens) { this.itens = itens; }
-}
-</code>
-
-<h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Bancário</h2>
+<h2>📌Exemplo 1 de Diagrama de Classes UML - Sistema Bancário</h2>
 
 <img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/65f6a9cc-0971-4bf0-a6da-9e4a603f0ded" />
 
@@ -271,3 +153,5 @@ public class SistemaBancario {
     }
 }
 </code>
+
+<h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Biblioteca</h2>
