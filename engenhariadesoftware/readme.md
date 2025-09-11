@@ -157,3 +157,70 @@ public class SistemaBancario {
 <h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Biblioteca</h2>
 
 <img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/46f96582-0c73-468a-aef4-9e7062ac1b43" />
+
+<h2>📌Código Java</h2>
+
+//Biblioteca.java
+public class Biblioteca {
+    private String nome;
+    private String numero;
+
+    public Biblioteca(String nome, String numero) {
+        this.nome = nome;
+        this.numero = numero;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    @Override
+    public String toString() {
+        return "Biblioteca{" +
+                "nome='" + nome + '\'' +
+                ", numero='" + numero + '\'' +
+                '}';
+    }
+}
+
+//SistemaBiblioteca.java
+import java.util.ArrayList;
+import java.util.List;
+
+public class SistemaBiblioteca {
+    private List<Biblioteca> bibliotecas;
+
+    public SistemaBiblioteca() {
+        this.bibliotecas = new ArrayList<>();
+    }
+
+    public void addBiblioteca(Biblioteca b) {
+        bibliotecas.add(b);
+    }
+
+    public List<Biblioteca> buscarBibliotecaPorNumero(String numero) {
+        List<Biblioteca> resultado = new ArrayList<>();
+        for (Biblioteca b : bibliotecas) {
+            if (b.getNumero().equals(numero)) {
+                resultado.add(b);
+            }
+        }
+        return resultado;
+    }
+
+    public List<Biblioteca> getBibliotecas() {
+        return bibliotecas;
+    }
+}
