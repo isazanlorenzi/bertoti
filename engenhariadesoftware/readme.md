@@ -159,7 +159,7 @@ public class SistemaBancario {
 <img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/46f96582-0c73-468a-aef4-9e7062ac1b43" />
 
 <h2>📌Código Java</h2>
-
+<code>
 //Biblioteca.java
 
 public class Biblioteca {
@@ -226,3 +226,4 @@ public class SistemaBiblioteca {
         return bibliotecas;
     }
 }
+</code>
