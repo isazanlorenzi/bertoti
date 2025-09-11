@@ -155,3 +155,5 @@ public class SistemaBancario {
 </code>
 
 <h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Biblioteca</h2>
+
+<img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/46f96582-0c73-468a-aef4-9e7062ac1b43" />
