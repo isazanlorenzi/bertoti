@@ -32,7 +32,6 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/65f6a9cc-0971-4bf0-a6da-9e4a603f0ded" />
 
 <h2>📌Código Java</h2>
-
 <code><pre>
 // Entidade base
 public abstract class EntidadeEconomica {
