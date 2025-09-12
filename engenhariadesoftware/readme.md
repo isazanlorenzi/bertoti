@@ -33,7 +33,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 <h2>📌Código Java</h2>
 
-<code>
+<code><pre>
 // Entidade base
 public abstract class EntidadeEconomica {
     protected String nome;
@@ -152,14 +152,14 @@ public class SistemaBancario {
         return reservas;
     }
 }
-</code>
+</code></pre>
 
 <h2>📌Exemplo 2 de Diagrama de Classes UML - Sistema Biblioteca</h2>
 
 <img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/46f96582-0c73-468a-aef4-9e7062ac1b43" />
 
 <h2>📌Código Java</h2>
-<code>
+<code><pre>
 //Biblioteca.java
 
 public class Biblioteca {
@@ -226,4 +226,4 @@ public class SistemaBiblioteca {
         return bibliotecas;
     }
 }
-</code>
+</code></pre>
