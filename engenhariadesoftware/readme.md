@@ -29,7 +29,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 <h2>📌Exemplo 1 de Diagrama de Classes UML - Sistema Bancário</h2>
 
-<img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/65f6a9cc-0971-4bf0-a6da-9e4a603f0ded" />
+<img width="2244" height="576" alt="image" src="https://github.com/user-attachments/assets/e4a7f97a-492f-4ccd-94ad-86e12baccc3f" />
 
 <h2>📌Código Java</h2>
 <code><pre>
