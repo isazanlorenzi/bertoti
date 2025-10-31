@@ -189,70 +189,50 @@ public class Main {
 </pre></code>
 <h2>9. 📌Teste JUnit</h2>
 <code><pre>
-//Biblioteca.java
+package biblioteca;
 
-public class Biblioteca {
-    private String nome;
-    private String numero;
-
-    public Biblioteca(String nome, String numero) {
-        this.nome = nome;
-        this.numero = numero;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    @Override
-    public String toString() {
-        return "Biblioteca{" +
-                "nome='" + nome + '\'' +
-                ", numero='" + numero + '\'' +
-                '}';
-    }
-}
-
-//SistemaBiblioteca.java
-
-import java.util.ArrayList;
+import static org.junit.Assert.*;
 import java.util.List;
+import org.junit.Before;
+import org.junit.Test;
 
-public class SistemaBiblioteca {
-    private List<Biblioteca> bibliotecas;
+public class SistemaBibliotecaTest {
 
-    public SistemaBiblioteca() {
-        this.bibliotecas = new ArrayList<>();
+    private SistemaBiblioteca sistema;
+    private Biblioteca b1;
+    private Biblioteca b2;
+
+    @Before
+    public void setUp() {
+        sistema = new SistemaBiblioteca();
+        b1 = new Biblioteca("Central", "001");
+        b2 = new Biblioteca("Setorial", "002");
+
+        sistema.addBiblioteca(b1);
+        sistema.addBiblioteca(b2);
     }
 
-    public void addBiblioteca(Biblioteca b) {
-        bibliotecas.add(b);
+    @Test
+    public void testAddBiblioteca() {
+        Biblioteca nova = new Biblioteca("Comunidade", "003");
+        sistema.addBiblioteca(nova);
+
+        List<Biblioteca> bibliotecas = sistema.getBibliotecas();
+        assertTrue(bibliotecas.contains(nova));
+        assertEquals(3, bibliotecas.size());
     }
 
-    public List<Biblioteca> buscarBibliotecaPorNumero(String numero) {
-        List<Biblioteca> resultado = new ArrayList<>();
-        for (Biblioteca b : bibliotecas) {
-            if (b.getNumero().equals(numero)) {
-                resultado.add(b);
-            }
-        }
-        return resultado;
+    @Test
+    public void testBuscarBibliotecaPorNumeroEncontrada() {
+        List<Biblioteca> resultado = sistema.buscarBibliotecaPorNumero("001");
+        assertEquals(1, resultado.size());
+        assertEquals("Central", resultado.get(0).getNome());
     }
 
-    public List<Biblioteca> getBibliotecas() {
-        return bibliotecas;
+    @Test
+    public void testBuscarBibliotecaPorNumeroNaoEncontrada() {
+        List<Biblioteca> resultado = sistema.buscarBibliotecaPorNumero("999");
+        assertTrue(resultado.isEmpty());
     }
 }
 </code></pre>
