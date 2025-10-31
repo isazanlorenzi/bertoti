@@ -99,6 +99,7 @@ public class SistemaBancarioTest {
 <img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/829a2969-c9c0-4386-aea5-f668d4118d87" />
 
 <h2>8. 📌Código Java</h2>
+
 <img width="1050" height="699" alt="image" src="https://github.com/user-attachments/assets/5fa01557-f2f5-485a-aefc-b239682e1c65" />
 <img width="1048" height="698" alt="image" src="https://github.com/user-attachments/assets/6ad73f10-8caf-46fa-8a88-1652b190d822" />
 
@@ -123,6 +124,7 @@ public class Main {
     }
 }
 </pre></code>
+
 <h2>9. 📌Teste JUnit</h2>
 <code><pre>
 package biblioteca;
