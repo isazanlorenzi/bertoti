@@ -100,41 +100,7 @@ public class SistemaBancarioTest {
 
 <h2>8. 📌Código Java</h2>
 <img width="1050" height="699" alt="image" src="https://github.com/user-attachments/assets/5fa01557-f2f5-485a-aefc-b239682e1c65" />
-
-<h2>📁 SistemaBiblioteca.java</h2>
-<code><pre>
-package biblioteca;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class SistemaBiblioteca {
-
-    private List<Biblioteca> bibliotecas;
-
-    public SistemaBiblioteca() {
-        bibliotecas = new ArrayList<>();
-    }
-
-    public void addBiblioteca(Biblioteca b) {
-        bibliotecas.add(b);
-    }
-
-    public List<Biblioteca> buscarBibliotecaPorNumero(String numero) {
-        List<Biblioteca> resultado = new ArrayList<>();
-        for (Biblioteca b : bibliotecas) {
-            if (b.getNumero().equals(numero)) {
-                resultado.add(b);
-            }
-        }
-        return resultado;
-    }
-
-    public List<Biblioteca> getBibliotecas() {
-        return bibliotecas;
-    }
-}
-</code></pre>
+<img width="1048" height="698" alt="image" src="https://github.com/user-attachments/assets/6ad73f10-8caf-46fa-8a88-1652b190d822" />
 
 <h2>💡 (Opcional) Exemplo de teste</h2>
 <code><pre>
