@@ -99,37 +99,7 @@ public class SistemaBancarioTest {
 <img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/829a2969-c9c0-4386-aea5-f668d4118d87" />
 
 <h2>8. 📌Código Java</h2>
-<h2>📁 Biblioteca.java</h2>
-<code><pre>
-package biblioteca;
-
-public class Biblioteca {
-
-    private String nome;
-    private String numero;
-
-    public Biblioteca(String nome, String numero) {
-        this.nome = nome;
-        this.numero = numero;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-}
-</code></pre>
+<img width="1050" height="699" alt="image" src="https://github.com/user-attachments/assets/5fa01557-f2f5-485a-aefc-b239682e1c65" />
 
 <h2>📁 SistemaBiblioteca.java</h2>
 <code><pre>
