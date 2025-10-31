@@ -13,7 +13,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <p>2.	Escala e Crescimento – À medida que a organização e o produto crescem, processos e arquitetura também precisam evoluir.</p>
 <p>3.	Trade-offs e Custos – Decisões devem ser tomadas considerando os impactos no longo prazo e o equilíbrio entre vantagens e desvantagens.</p>
 
-<h2>3. 📌3 exemplos comentados de trade-offs</h2>
+<h2>3. 📌Três exemplos comentados de trade-offs</h2>
 
 <p>1.	Velocidade de entrega vs. Qualidade do código</p>
 <p>•	Escolher entregar rapidamente pode ajudar a lançar uma funcionalidade no mercado, mas aumenta o risco de dívidas técnicas e problemas futuros.</p>
