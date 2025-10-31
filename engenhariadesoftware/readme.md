@@ -1,8 +1,8 @@
-<h2>📌Comentário - Primeiro parágrafo</h2>
+<h2>📌Comentário livro Software Engineering at Google - Primeiro parágrafo</h2>
 
 <p>O texto diferencia programação, ciência da computação e engenharia de software, destacando que esta última aplica teoria e práticas de forma rigorosa para criar sistemas grandes e confiáveis. Embora o software hoje exige padrões mais robustos, dado seu papel crítico na sociedade. A experiência do Google com sistemas massivos oferece uma visão prática única sobre como alcançar essa maturidade.</p>
 
-<h2>📌Comentário - Segundo parágrafo</h2>
+<h2>📌Comentário livro Software Engineering at Google - Segundo parágrafo</h2>
 
 <p>Esse segundo trecho amplia a definição de engenharia de software, deixando claro que ela não é só escrever código, mas também envolve processos, ferramentas e práticas que permitem manter esse código útil e sustentável ao longo do tempo.
 
@@ -13,7 +13,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <p>2.	Escala e Crescimento – À medida que a organização e o produto crescem, processos e arquitetura também precisam evoluir.</p>
 <p>3.	Trade-offs e Custos – Decisões devem ser tomadas considerando os impactos no longo prazo e o equilíbrio entre vantagens e desvantagens.</p>
 
-<h2>📌Exemplos de trade-offs em engenharia de software:</h2>
+<h2>📌3 exemplos comentados de trade-offs</h2>
 
 <p>1.	Velocidade de entrega vs. Qualidade do código</p>
 <p>•	Escolher entregar rapidamente pode ajudar a lançar uma funcionalidade no mercado, mas aumenta o risco de dívidas técnicas e problemas futuros.</p>
@@ -36,7 +36,7 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 <img width="1059" height="693" alt="image" src="https://github.com/user-attachments/assets/cacdcab5-3bbb-45f6-bb93-c001fd94cc1d" />
 <img width="1065" height="694" alt="image" src="https://github.com/user-attachments/assets/41a3e0d7-6233-401c-84c1-eb65233dba37" />
 
-
+<h2>📌Teste JUnit</h2>
 <code><pre>
 // Entidade base
 public abstract class EntidadeEconomica {
