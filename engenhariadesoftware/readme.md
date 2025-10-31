@@ -38,122 +38,58 @@ O texto apresenta três princípios centrais para guiar decisões e práticas:
 
 <h2>6. 📌Teste JUnit</h2>
 <code><pre>
-// Entidade base
-public abstract class EntidadeEconomica {
-    protected String nome;
-    protected double saldo;
+package banco;
 
-    public EntidadeEconomica(String nome, double saldo) {
-        this.nome = nome;
-        this.saldo = saldo;
-    }
-
-    public void depositar(double valor) {
-        saldo += valor;
-    }
-
-    public void sacar(double valor) {
-        if (valor <= saldo) {
-            saldo -= valor;
-        } else {
-            System.out.println(nome + " não possui saldo suficiente.");
-        }
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-}
-
-// Famílias
-public class Familia extends EntidadeEconomica {
-    public Familia(String nome, double saldo) {
-        super(nome, saldo);
-    }
-}
-
-// Empresas
-public class Empresa extends EntidadeEconomica {
-    public Empresa(String nome, double saldo) {
-        super(nome, saldo);
-    }
-
-    public void solicitarEmprestimo(SistemaBancario banco, double valor) {
-        banco.concederEmprestimo(this, valor);
-    }
-}
-
-// Governo
-public class Governo extends EntidadeEconomica {
-    public Governo(String nome, double saldo) {
-        super(nome, saldo);
-    }
-
-    public void emitirTitulos(SistemaBancario banco, double valor) {
-        banco.comprarTitulosPublicos(this, valor);
-    }
-}
-
-// Banco Central
-public class BancoCentral {
-    public void fornecerLiquidez(SistemaBancario banco, double valor) {
-        banco.receberLiquidez(valor);
-        System.out.println("Banco Central forneceu R$" + valor + " de liquidez.");
-    }
-
-    public void regularSistema(SistemaBancario banco) {
-        System.out.println("Banco Central está regulando o sistema bancário.");
-    }
-}
-
-// Sistema Bancário
-import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import java.util.List;
 
-public class SistemaBancario {
-    private double reservas;
-    private List<EntidadeEconomica> clientes = new ArrayList<>();
+public class SistemaBancarioTest {
 
-    public void adicionarCliente(EntidadeEconomica entidade) {
-        clientes.add(entidade);
+    private SistemaBancario sistema;
+    private Banco banco1;
+    private Banco banco2;
+
+    @BeforeEach
+    public void setUp() {
+        sistema = new SistemaBancario();
+        banco1 = new Banco("001", "Banco do Brasil", "Av. Central, 100");
+        banco2 = new Banco("237", "Bradesco", "Rua das Flores, 200");
     }
 
-    public void receberDeposito(EntidadeEconomica entidade, double valor) {
-        entidade.sacar(valor);
-        reservas += valor;
-        System.out.println(entidade.getNome() + " depositou R$" + valor);
+    @Test
+    public void testCriacaoBanco() {
+        assertEquals("001", banco1.getNumero());
+        assertEquals("Banco do Brasil", banco1.getNome());
+        assertEquals("Av. Central, 100", banco1.getEndereco());
     }
 
-    public void concederEmprestimo(EntidadeEconomica entidade, double valor) {
-        if (valor <= reservas) {
-            entidade.depositar(valor);
-            reservas -= valor;
-            System.out.println("Empréstimo de R$" + valor + " concedido a " + entidade.getNome());
-        } else {
-            System.out.println("Reservas insuficientes para conceder empréstimo.");
-        }
+    @Test
+    public void testSettersBanco() {
+        banco1.setNumero("123");
+        banco1.setNome("Novo Banco");
+        banco1.setEndereco("Rua Nova, 50");
+
+        assertEquals("123", banco1.getNumero());
+        assertEquals("Novo Banco", banco1.getNome());
+        assertEquals("Rua Nova, 50", banco1.getEndereco());
     }
 
-    public void comprarTitulosPublicos(Governo governo, double valor) {
-        if (valor <= reservas) {
-            reservas -= valor;
-            governo.depositar(valor);
-            System.out.println("Sistema bancário comprou R$" + valor + " em títulos públicos.");
-        } else {
-            System.out.println("Reservas insuficientes para comprar títulos.");
-        }
+    @Test
+    public void testAdicionarBancoNoSistema() {
+        sistema.addBanco(banco1);
+        sistema.addBanco(banco2);
+
+        List<Banco> bancos = sistema.getBancos();
+        assertEquals(2, bancos.size());
+        assertTrue(bancos.contains(banco1));
+        assertTrue(bancos.contains(banco2));
     }
 
-    public void receberLiquidez(double valor) {
-        reservas += valor;
-    }
-
-    public double getReservas() {
-        return reservas;
+    @Test
+    public void testListaBancosVaziaInicialmente() {
+        assertTrue(sistema.getBancos().isEmpty());
     }
 }
 </code></pre>
