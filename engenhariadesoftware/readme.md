@@ -99,7 +99,94 @@ public class SistemaBancarioTest {
 <img width="2680" height="584" alt="image" src="https://github.com/user-attachments/assets/829a2969-c9c0-4386-aea5-f668d4118d87" />
 
 <h2>8. 📌Código Java</h2>
+<h2>📁 Biblioteca.java</h2>
+<code><pre>
+package biblioteca;
 
+public class Biblioteca {
+
+    private String nome;
+    private String numero;
+
+    public Biblioteca(String nome, String numero) {
+        this.nome = nome;
+        this.numero = numero;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+}
+</code></pre>
+
+<h2>📁 SistemaBiblioteca.java</h2>
+<code><pre>
+package biblioteca;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SistemaBiblioteca {
+
+    private List<Biblioteca> bibliotecas;
+
+    public SistemaBiblioteca() {
+        bibliotecas = new ArrayList<>();
+    }
+
+    public void addBiblioteca(Biblioteca b) {
+        bibliotecas.add(b);
+    }
+
+    public List<Biblioteca> buscarBibliotecaPorNumero(String numero) {
+        List<Biblioteca> resultado = new ArrayList<>();
+        for (Biblioteca b : bibliotecas) {
+            if (b.getNumero().equals(numero)) {
+                resultado.add(b);
+            }
+        }
+        return resultado;
+    }
+
+    public List<Biblioteca> getBibliotecas() {
+        return bibliotecas;
+    }
+}
+</code></pre>
+
+<h2>💡 (Opcional) Exemplo de teste</h2>
+<code><pre>
+package biblioteca;
+
+public class Main {
+    public static void main(String[] args) {
+        SistemaBiblioteca sistema = new SistemaBiblioteca();
+
+        Biblioteca b1 = new Biblioteca("Central", "001");
+        Biblioteca b2 = new Biblioteca("Setorial", "002");
+
+        sistema.addBiblioteca(b1);
+        sistema.addBiblioteca(b2);
+
+        System.out.println("Busca por número 001:");
+        for (Biblioteca b : sistema.buscarBibliotecaPorNumero("001")) {
+            System.out.println(" - " + b.getNome());
+        }
+    }
+}
+</pre></code>
 <h2>9. 📌Teste JUnit</h2>
 <code><pre>
 //Biblioteca.java
